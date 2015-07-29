@@ -1,5 +1,6 @@
 {
   "name": "netiam-errors",
+  "version": "1.0.0",
   "description": "A collection of HTTP errors",
   "main": "index.js",
   "scripts": {
