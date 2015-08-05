@@ -1,3 +1,7 @@
+import http from 'http'
+import os from 'os'
+import util from 'util'
+
 /**
  * HTTPError
  * @param {String} message
@@ -7,7 +11,6 @@
  * @constructor
  */
 function HTTPError(message, code, status, data) {
-
   if (message instanceof Error) {
     this.message = message.message
   } else {
@@ -17,102 +20,112 @@ function HTTPError(message, code, status, data) {
   this.code = code || 500
   this.status = status
   this.data = data
+
+  Error.captureStackTrace(this, this.constructor)
+
+  const modifiedStack = this.stack.split(os.EOL)
+  modifiedStack.splice(1, 1)
+  this.stack = modifiedStack.join(os.EOL)
 }
 
-HTTPError.prototype = new Error()
+util.inherits(HTTPError, Error)
+
+HTTPError.prototype.toString = function() {
+  return this.name + ': ' + this.message
+}
 
 export default HTTPError
 
 // 4xx
 export function badRequest(message = undefined, data = undefined) {
-  return new HTTPError(message, 400, 'Bad Request', data)
+  return new HTTPError(message, 400, http.STATUS_CODES[400], data)
 }
 
 export function unauthorized(message = undefined, data = undefined) {
-  return new HTTPError(message, 401, 'Unauthorized', data)
+  return new HTTPError(message, 401, http.STATUS_CODES[401], data)
 }
 
 export function forbidden(message = undefined, data = undefined) {
-  return new HTTPError(message, 403, 'Forbidden', data)
+  return new HTTPError(message, 403, http.STATUS_CODES[403], data)
 }
 
 export function notFound(message = undefined, data = undefined) {
-  return new HTTPError(message, 404, 'Not Found', data)
+  return new HTTPError(message, 404, http.STATUS_CODES[404], data)
 }
 
 export function methodNotAllowed(message = undefined, data = undefined) {
-  return new HTTPError(message, 405, 'Method Not Allowed', data)
+  return new HTTPError(message, 405, http.STATUS_CODES[405], data)
 }
 
 export function notAcceptable(message = undefined, data = undefined) {
-  return new HTTPError(message, 406, 'Not Acceptable', data)
+  return new HTTPError(message, 406, http.STATUS_CODES[406], data)
 }
 
 export function proxyAuthenticationRequired(message = undefined, data = undefined) {
-  return new HTTPError(message, 407, 'Proxy Authentication Required', data)
+  return new HTTPError(message, 407, http.STATUS_CODES[407], data)
 }
 
 export function requestTimeout(message = undefined, data = undefined) {
-  return new HTTPError(message, 408, 'Request Timeout', data)
+  return new HTTPError(message, 408, http.STATUS_CODES[408], data)
 }
 
 export function conflict(message = undefined, data = undefined) {
-  return new HTTPError(message, 409, 'Conflict', data)
+  return new HTTPError(message, 409, http.STATUS_CODES[409], data)
 }
 
 export function gone(message = undefined, data = undefined) {
-  return new HTTPError(message, 410, 'Gone', data)
+  return new HTTPError(message, 410, http.STATUS_CODES[410], data)
 }
 
 export function lengthRequired(message = undefined, data = undefined) {
-  return new HTTPError(message, 411, 'Length Required', data)
+  return new HTTPError(message, 411, http.STATUS_CODES[411], data)
 }
 
 export function preconditionFailed(message = undefined, data = undefined) {
-  return new HTTPError(message, 412, 'Precondition Failed', data)
+  return new HTTPError(message, 412, http.STATUS_CODES[412], data)
 }
 
 export function requestEntityTooLarge(message = undefined, data = undefined) {
-  return new HTTPError(message, 413, 'Request Entity Too Large', data)
+  return new HTTPError(message, 413, http.STATUS_CODES[413], data)
 }
 
 export function requestURITooLong(message = undefined, data = undefined) {
-  return new HTTPError(message, 414, 'Request URI Too Long', data)
+  return new HTTPError(message, 414, http.STATUS_CODES[414], data)
 }
 
 export function unsupportedMediaType(message = undefined, data = undefined) {
-  return new HTTPError(message, 415, 'Unsupported Media Type', data)
+  return new HTTPError(message, 415, http.STATUS_CODES[415], data)
 }
 
 export function requestedRangeNotSatisfiable(message = undefined, data = undefined) {
-  return new HTTPError(message, 416, 'Requested Range Not Satisfiable', data)
+  return new HTTPError(message, 416, http.STATUS_CODES[416], data)
 }
 
 export function expectationFailed(message = undefined, data = undefined) {
-  return new HTTPError(message, 417, 'Expectation Failed', data)
+  return new HTTPError(message, 417, http.STATUS_CODES[417], data)
 }
 
 // 5xx
 export function internalServerError(message = undefined, data = undefined) {
-  return new HTTPError(message, 500, 'Internal Server Error', data)
+  return new HTTPError(message, 500, http.STATUS_CODES[500], data)
 }
 
 export function notImplemnted(message = undefined, data = undefined) {
-  return new HTTPError(message, 501, 'Not Implemented', data)
+  return new HTTPError(message, 501, http.STATUS_CODES[501], data)
 }
 
 export function badGateway(message = undefined, data = undefined) {
-  return new HTTPError(message, 502, 'Bad Gateway', data)
+  return new HTTPError(message, 502, http.STATUS_CODES[502], data)
 }
 
 export function serviceUnavailable(message = undefined, data = undefined) {
-  return new HTTPError(message, 503, 'Service Unavailable', data)
+  return new HTTPError(message, 503, http.STATUS_CODES[503], data)
 }
 
 export function gatewayTimeout(message = undefined, data = undefined) {
-  return new HTTPError(message, 504, 'Gateway Timeout', data)
+  return new HTTPError(message, 504, http.STATUS_CODES[504], data)
 }
 
 export function httpVersionNotSupported(message = undefined, data = undefined) {
-  return new HTTPError(message, 505, 'HTTP Version Not Supported', data)
+  return new HTTPError(message, 505, http.STATUS_CODES[505], data)
 }
