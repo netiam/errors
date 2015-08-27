@@ -36,7 +36,7 @@
     "eslint": "^0.24.1",
     "istanbul": "^0.3.17",
     "mocha": "^2.2.5",
-    "semantic-release": "^4.0.0",
+    "semantic-release": "^4.3.4",
     "should": "^7.0.2"
   },
   "dependencies": {
