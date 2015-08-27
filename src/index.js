@@ -110,7 +110,7 @@ export function internalServerError(message = undefined, data = undefined) {
   return new HTTPError(message, 500, http.STATUS_CODES[500], data)
 }
 
-export function notImplemnted(message = undefined, data = undefined) {
+export function notImplemented(message = undefined, data = undefined) {
   return new HTTPError(message, 501, http.STATUS_CODES[501], data)
 }
 

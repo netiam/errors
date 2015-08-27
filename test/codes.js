@@ -25,7 +25,7 @@ describe('errors', () => {
 
     it('should compare server error codes', () => {
       errors.internalServerError().code.should.eql(500)
-      errors.notImplemnted().code.should.eql(501)
+      errors.notImplemented().code.should.eql(501)
       errors.badGateway().code.should.eql(502)
       errors.serviceUnavailable().code.should.eql(503)
       errors.gatewayTimeout().code.should.eql(504)
