@@ -41,6 +41,13 @@ export const Codes = {
   E1001: 'A user with this identifier already exists'
 }
 
+export function code(errorCode) {
+  return {
+    code: errorCode,
+    message: Codes[errorCode]
+  }
+}
+
 // 4xx
 export function badRequest(message = undefined, data = undefined) {
   return new HTTPError(message, 400, http.STATUS_CODES[400], data)
