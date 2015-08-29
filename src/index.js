@@ -37,8 +37,8 @@ HTTPError.prototype.toString = function() {
 export default HTTPError
 
 export const Codes = {
-  '1000': 'Cannot create user',
-  '1001': 'A user with this identifier already exists'
+  E1000: 'Cannot create user',
+  E1001: 'A user with this identifier already exists'
 }
 
 // 4xx
