@@ -38,7 +38,15 @@ export default HTTPError
 
 export const Codes = {
   E1000: 'User error',
-  E1001: 'A user with this identifier already exists'
+  E1001: 'A user with this identifier already exists',
+  E1002: 'Either the user\'s identifier or credential is invalid',
+
+  E2000: 'Client error',
+  E2001: 'Missing header "api-client-id"',
+  E2002: 'Invalid client ID',
+
+  E3000: 'REST error',
+  E3001: 'Invalid filter string'
 }
 
 export function code(errorCode) {
