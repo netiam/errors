@@ -4,10 +4,10 @@ import util from 'util'
 
 /**
  * HTTPError
- * @param {String} message
- * @param {Number} [code=500]
- * @param {String} [status]
- * @param {*} [data]
+ * @param {String}  message     Description of error
+ * @param {Number}  [code=500]  HTTP status code
+ * @param {String}  [status]    The description for status code
+ * @param {*}       [data]      Arbitrary data
  * @constructor
  */
 function HTTPError(message, code, status, data) {
@@ -35,6 +35,11 @@ HTTPError.prototype.toString = function() {
 }
 
 export default HTTPError
+
+export const Codes = {
+  '1000': 'Cannot create user',
+  '1001': 'A user with this identifier already exists'
+}
 
 // 4xx
 export function badRequest(message = undefined, data = undefined) {
