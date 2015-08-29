@@ -39,7 +39,7 @@ export default HTTPError
 export const Codes = {
   E1000: {
     code: 1000,
-    message: 'User error'
+    message: 'User Error'
   },
   E1001: {
     code: 1001,
@@ -52,7 +52,7 @@ export const Codes = {
 
   E2000: {
     code: 2000,
-    message: 'Client error'
+    message: 'Client Error'
   },
   E2001: {
     code: 2001,
@@ -60,16 +60,49 @@ export const Codes = {
   },
   E2002: {
     code: 2002,
-    message: 'Invalid client ID'
+    message: 'Invalid Client ID'
   },
 
   E3000: {
     code: 3000,
-    message: 'REST error'
+    message: 'REST Error'
   },
   E3001: {
     code: 3001,
     message: 'Invalid filter string'
+  },
+
+  E4000: {
+    code: 4000,
+    message: 'OAuth2 Error'
+  },
+  E4001: {
+    code: 4001,
+    message: 'Invalid Request'
+  },
+  E4002: {
+    code: 4002,
+    message: 'Unauthorized Client'
+  },
+  E4003: {
+    code: 4003,
+    message: 'Access Denied'
+  },
+  E4004: {
+    code: 4004,
+    message: 'Unsupported Response Type'
+  },
+  E4005: {
+    code: 4005,
+    message: 'Invalid Scope'
+  },
+  E4006: {
+    code: 4006,
+    message: 'Server Error'
+  },
+  E4007: {
+    code: 4007,
+    message: 'Temporary Unavailable'
   }
 }
 
