@@ -37,22 +37,39 @@ HTTPError.prototype.toString = function() {
 export default HTTPError
 
 export const Codes = {
-  E1000: 'User error',
-  E1001: 'A user with this identifier already exists',
-  E1002: 'Either the user\'s identifier or credential is invalid',
+  E1000: {
+    code: 1000,
+    message: 'User error'
+  },
+  E1001: {
+    code: 1001,
+    message: 'A user with this identifier already exists'
+  },
+  E1002: {
+    code: 1002,
+    message: 'Either the user\'s identifier or credential is invalid'
+  },
 
-  E2000: 'Client error',
-  E2001: 'Missing header "api-client-id"',
-  E2002: 'Invalid client ID',
+  E2000: {
+    code: 2000,
+    message: 'Client error'
+  },
+  E2001: {
+    code: 2001,
+    message: 'Missing header "api-client-id"'
+  },
+  E2002: {
+    code: 2002,
+    message: 'Invalid client ID'
+  },
 
-  E3000: 'REST error',
-  E3001: 'Invalid filter string'
-}
-
-export function code(errorCode) {
-  return {
-    code: errorCode,
-    message: Codes[errorCode]
+  E3000: {
+    code: 3000,
+    message: 'REST error'
+  },
+  E3001: {
+    code: 3001,
+    message: 'Invalid filter string'
   }
 }
 
