@@ -11,6 +11,7 @@
 |-                  |-                                                        |
 | <code>3000</code> | REST Error                                              |
 | <code>3001</code> | Invalid filter string                                   |
+| <code>3002</code> | Validation Error                                        |
 |-                  |-                                                        |
 | <code>4000</code> | OAuth2 Error                                            |
 | <code>4001</code> | Invalid Request                                         |
@@ -27,4 +28,3 @@
 | <code>4012</code> | Cannot find token                                       |
 | <code>4013</code> | Unauthorized invocation attempt                         |
 | <code>4014</code> | Invalid token_type                                      |
-
