@@ -103,6 +103,18 @@ export const Codes = {
   E4007: {
     code: 4007,
     message: 'Temporary Unavailable'
+  },
+  E4008: {
+    code: 4008,
+    message: 'This grant_type is not supported yet'
+  },
+  E4009: {
+    code: 4009,
+    message: 'Thes response_type must be set to "token"'
+  },
+  E4010: {
+    code: 4010,
+    message: 'The provided credentials are invalid'
   }
 }
 
