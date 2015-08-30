@@ -110,7 +110,7 @@ export const Codes = {
   },
   E4009: {
     code: 4009,
-    message: 'Thes response_type must be set to "token"'
+    message: 'The response_type must be set to "token"'
   },
   E4010: {
     code: 4010,
