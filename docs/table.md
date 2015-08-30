@@ -20,5 +20,5 @@
 | 4006 | Server Error                                          |
 | 4007 | Temporary Unavailable                                 |
 | 4008 | This grant_type is not supported yet                  |
-| 4009 | Thes response_type must be set to "token"             |
+| 4009 | The response_type must be set to "token"              |
 | 4010 | The provided credentials are invalid                  |
