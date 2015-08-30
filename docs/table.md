@@ -3,6 +3,7 @@
 | <code>1000</code> | User Error                                              |
 | <code>1001</code> | A user with this identifier already exists              |
 | <code>1002</code> | Either the user's identifier or credential is invalid   |
+| <code>1003</code> | A user with this identifier does not exist              |
 |-                  |-                                                        |
 | <code>2000</code> | Client Error                                            |
 | <code>2001</code> | Missing header "api-client-id"                          |

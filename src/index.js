@@ -49,6 +49,10 @@ export const Codes = {
     code: 1002,
     message: 'Either the user\'s identifier or credential is invalid'
   },
+  E1003: {
+    code: 1003,
+    message: 'A user with this identifier does not exist'
+  },
 
   E2000: {
     code: 2000,
