@@ -115,6 +115,14 @@ export const Codes = {
   E4010: {
     code: 4010,
     message: 'The provided credentials are invalid'
+  },
+  E4011: {
+    code: 4011,
+    message: 'The grant_type parameter must be set to "refresh_token"'
+  },
+  E4012: {
+    code: 4012,
+    message: 'Cannot find token'
   }
 }
 
