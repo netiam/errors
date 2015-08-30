@@ -24,3 +24,5 @@
 | 4010 | The provided credentials are invalid                    |
 | 4011 | The grant_type parameter must be set to "refresh_token" |
 | 4012 | Cannot find token                                       |
+| 4013 | Unauthorized invocation attempt                         |
+| 4014 | Invalid token_type                                      |
