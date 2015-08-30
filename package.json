@@ -6,6 +6,7 @@
   "scripts": {
     "build": "./bin/build",
     "clean": "./bin/clean",
+    "docs": "./bin/table",
     "lint": "./bin/lint",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "npm run watch",
@@ -32,10 +33,13 @@
   "devDependencies": {
     "babel": "^5.8.9",
     "babel-eslint": "^4.0.5",
+    "babel-runtime": "^5.8.20",
     "codeclimate-test-reporter": "^0.1.0",
     "eslint": "^0.24.1",
     "istanbul": "^0.3.17",
+    "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
+    "rimraf": "^2.4.3",
     "semantic-release": "^4.3.4",
     "should": "^7.0.2"
   },
