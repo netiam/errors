@@ -75,6 +75,10 @@ export const Codes = {
     code: 3001,
     message: 'Invalid filter string'
   },
+  E3002: {
+    code: 3002,
+    message: 'Validation Error'
+  },
 
   E4000: {
     code: 4000,
