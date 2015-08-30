@@ -123,6 +123,14 @@ export const Codes = {
   E4012: {
     code: 4012,
     message: 'Cannot find token'
+  },
+  E4013: {
+    code: 4013,
+    message: 'Unauthorized invocation attempt'
+  },
+  E4014: {
+    code: 4014,
+    message: 'Invalid token_type'
   }
 }
 
