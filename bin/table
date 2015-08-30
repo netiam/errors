@@ -18,6 +18,7 @@ _.forEach(errors.Codes, function(error) {
 })
 
 sizes[0]++
+sizes[0] += 13
 sizes[1]++
 
 var table = ''
@@ -32,7 +33,7 @@ _.forEach(errors.Codes, function(error) {
     table += '|-' + Array(sizes[0]).join(' ') + ' |-' + Array(sizes[1]).join(' ') + ' |' + "\n"
   }
 
-  table += '| ' + error.code + Array(sizes[0] - String(error.code).length).join(' ') + ' | ' + error.message + Array(sizes[1] - String(error.message).length).join(' ') + ' |' + "\n"
+  table += '| ' + '<code>' + error.code + '</code>' + Array(sizes[0] - String(error.code).length - 13).join(' ') + ' | ' + error.message + Array(sizes[1] - String(error.message).length).join(' ') + ' |' + "\n"
 })
 
 rimraf('docs', function(err) {
