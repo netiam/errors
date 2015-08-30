@@ -37,6 +37,7 @@
     "codeclimate-test-reporter": "^0.1.0",
     "eslint": "^0.24.1",
     "istanbul": "^0.3.17",
+    "lodash": "^3.10.1",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "rimraf": "^2.4.3",
