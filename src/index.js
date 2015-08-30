@@ -13,15 +13,12 @@ import util from 'util'
 function HTTPError(message, code, status, data) {
   if (message instanceof Error) {
     this.message = message.message
-    this.code = message.code
-    this.status = message.status
-    this.data = message.data
   } else {
     this.message = message
-    this.code = code || 500
-    this.status = status
   }
 
+  this.code = code || 500
+  this.status = status
   this.data = data
 
   Error.captureStackTrace(this, this.constructor)
