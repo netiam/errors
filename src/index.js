@@ -4,34 +4,34 @@ import util from 'util'
 
 /**
  * HTTPError
- * @param {String}  message     Description of error
- * @param {Number}  [code=500]  HTTP status code
- * @param {String}  [status]    The description for status code
- * @param {*}       [data]      Arbitrary data
+ * @param {String|Error}  message     Description of error
+ * @param {Number}        [code=500]  HTTP status code
+ * @param {String}        [status]    The description for status code
+ * @param {*}             [data]      Arbitrary data
  * @constructor
  */
-function HTTPError(message, code, status, data) {
-  if (message instanceof Error) {
-    this.message = message.message
-  } else {
+class HTTPError extends Error {
+  constructor(message,
+              code = 500,
+              status = 'Internal Server Error',
+              data = undefined) {
+    super()
+
+    if (message instanceof Error) {
+      this.message = message.message
+    } else {
+      this.message = message
+    }
+
     this.message = message
+    this.code = code
+    this.status = status
+    this.data = data
   }
 
-  this.code = code || 500
-  this.status = status
-  this.data = data
-
-  Error.captureStackTrace(this, this.constructor)
-
-  const modifiedStack = this.stack.split(os.EOL)
-  modifiedStack.splice(1, 1)
-  this.stack = modifiedStack.join(os.EOL)
-}
-
-util.inherits(HTTPError, Error)
-
-HTTPError.prototype.toString = function() {
-  return this.name + ': ' + this.message
+  toString() {
+    return this.name + ': ' + this.message
+  }
 }
 
 export default HTTPError
