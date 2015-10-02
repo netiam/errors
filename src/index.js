@@ -13,12 +13,10 @@ import util from 'util'
  */
 export default class HTTPError extends ExtendableError {
   constructor(status = 500,
-              code = 1000,
               type = 'HTTPError',
               message = 'Generic HTTP error') {
     super(message)
     this.status = status
-    this.code = code
     this.type = type
   }
 }
