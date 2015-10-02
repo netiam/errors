@@ -29,140 +29,140 @@ export default class HTTPError extends ExtendableError {
 
 // 4xx
 export class BadRequest extends HTTPError {
-  constructor(code, type, message) {
-    super(400, code, type, message)
+  constructor(type, message) {
+    super(400, type, message)
   }
 }
 
 export class Unauthorized extends HTTPError {
-  constructor(code, type, message) {
-    super(401, code, type, message)
+  constructor(type, message) {
+    super(401, type, message)
   }
 }
 
 export class Forbidden extends HTTPError {
-  constructor(code, type, message) {
-    super(403, code, type, message)
+  constructor(type, message) {
+    super(403, type, message)
   }
 }
 
 export class NotFound extends HTTPError {
-  constructor(code, type, message) {
-    super(404, code, type, message)
+  constructor(type, message) {
+    super(404, type, message)
   }
 }
 
 export class MethodNotAllowed extends HTTPError {
-  constructor(code, type, message) {
-    super(405, code, type, message)
+  constructor(type, message) {
+    super(405, type, message)
   }
 }
 
 export class NotAcceptable extends HTTPError {
-  constructor(code, type, message) {
-    super(406, code, type, message)
+  constructor(type, message) {
+    super(406, type, message)
   }
 }
 
 export class ProxyAuthenticationRequired extends HTTPError {
-  constructor(code, type, message) {
-    super(407, code, type, message)
+  constructor(type, message) {
+    super(407, type, message)
   }
 }
 
 export class RequestTimeout extends HTTPError {
-  constructor(code, type, message) {
-    super(408, code, type, message)
+  constructor(type, message) {
+    super(408, type, message)
   }
 }
 
 export class Conflict extends HTTPError {
-  constructor(code, type, message) {
-    super(409, code, type, message)
+  constructor(type, message) {
+    super(409, type, message)
   }
 }
 
 export class Gone extends HTTPError {
-  constructor(code, type, message) {
-    super(410, code, type, message)
+  constructor(type, message) {
+    super(410, type, message)
   }
 }
 
 export class LengthRequired extends HTTPError {
-  constructor(code, type, message) {
-    super(411, code, type, message)
+  constructor(type, message) {
+    super(411, type, message)
   }
 }
 
 export class PreconditionFailed extends HTTPError {
-  constructor(code, type, message) {
-    super(412, code, type, message)
+  constructor(type, message) {
+    super(412, type, message)
   }
 }
 
 export class RequestEntityTooLarge extends HTTPError {
-  constructor(code, type, message) {
-    super(413, code, type, message)
+  constructor(type, message) {
+    super(413, type, message)
   }
 }
 
 export class RequestURITooLong extends HTTPError {
-  constructor(code, type, message) {
-    super(414, code, type, message)
+  constructor(type, message) {
+    super(414, type, message)
   }
 }
 
 export class UnsupportedMediaType extends HTTPError {
-  constructor(code, type, message) {
-    super(415, code, type, message)
+  constructor(type, message) {
+    super(415, type, message)
   }
 }
 
 export class RequestedRangeNotSatisfiable extends HTTPError {
-  constructor(code, type, message) {
-    super(416, code, type, message)
+  constructor(type, message) {
+    super(416, type, message)
   }
 }
 
 export class ExpectationFailed extends HTTPError {
-  constructor(code, type, message) {
-    super(417, code, type, message)
+  constructor(type, message) {
+    super(417, type, message)
   }
 }
 
 // 5xx
 export class InternalServerError extends HTTPError {
-  constructor(code, type, message) {
-    super(500, code, type, message)
+  constructor(type, message) {
+    super(500, type, message)
   }
 }
 
 export class NotImplemented extends HTTPError {
-  constructor(code, type, message) {
-    super(501, code, type, message)
+  constructor(type, message) {
+    super(501, type, message)
   }
 }
 
 export class BadGateway extends HTTPError {
-  constructor(code, type, message) {
-    super(502, code, type, message)
+  constructor(type, message) {
+    super(502, type, message)
   }
 }
 
 export class ServiceUnavailable extends HTTPError {
-  constructor(code, type, message) {
-    super(503, code, type, message)
+  constructor(type, message) {
+    super(503, type, message)
   }
 }
 
 export class GatewayTimeout extends HTTPError {
-  constructor(code, type, message) {
-    super(504, code, type, message)
+  constructor(type, message) {
+    super(504, type, message)
   }
 }
 
 export class HttpVersionNotSupported extends HTTPError {
-  constructor(code, type, message) {
-    super(505, code, type, message)
+  constructor(type, message) {
+    super(505, type, message)
   }
 }
