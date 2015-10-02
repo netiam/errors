@@ -21,9 +21,9 @@ export default class HTTPError extends ExtendableError {
   }
 
   toString() {
-    return this.status + ' ' + http.STATUS_CODES[this.status] + '\n'
-      + '  Type: ' + this.type + '\n'
-      + '\n'
+    return this.status + ' ' + http.STATUS_CODES[this.status] + os.EOL
+      + '  Type: ' + this.type + os.EOL
+      + os.EOL
       + this.message
   }
 }
