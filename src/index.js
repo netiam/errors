@@ -1,7 +1,6 @@
 import ExtendableError from 'es6-error'
 import http from 'http'
 import os from 'os'
-import util from 'util'
 
 /**
  * HTTPError
