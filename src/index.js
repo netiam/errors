@@ -1,6 +1,9 @@
 import ExtendableError from 'es6-error'
 import http from 'http'
 import os from 'os'
+import * as codes from './codes'
+
+export const Codes = codes
 
 /**
  * HTTPError
