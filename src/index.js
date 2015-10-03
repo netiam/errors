@@ -16,17 +16,28 @@ export const Codes = codes
 export default class HTTPError extends ExtendableError {
   constructor(status = 500,
               type = 'HTTPError',
-              message = 'Generic HTTP error') {
+              message = 'Generic HTTP error',
+              data = undefined) {
     super(message)
     this.status = status
     this.type = type
+    this.data = data
   }
 
   toString() {
-    return this.status + ' ' + http.STATUS_CODES[this.status] + os.EOL
+    let str = this.status + ' ' + http.STATUS_CODES[this.status] + os.EOL
       + '  Type: ' + this.type + os.EOL
       + os.EOL
       + this.message
+
+    if (this.data) {
+      str += os.EOL
+        + os.EOL
+        + '  Data:' + os.EOL
+        + '  ' + JSON.stringify(this.data)
+    }
+
+    return str
   }
 }
 
