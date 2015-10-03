@@ -2,7 +2,7 @@
   "name": "netiam-errors",
   "version": "1.0.0",
   "description": "A collection of HTTP errors",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "./bin/build",
     "clean": "./bin/clean",
