@@ -1,6 +1,6 @@
 export const E1000 = {
   code: 1000,
-  type: 'GENERIC_USER_ERROR'
+  type: 'GENERIC_ERROR'
 }
 
 export const E2000 = {
