@@ -7,10 +7,10 @@ export const Codes = codes
 
 /**
  * HTTPError
- * @param {String|Error}  message     Description of error
- * @param {Number}        [code=500]  HTTP status code
- * @param {String}        [status]    The description for status code
- * @param {*}             [data]      Arbitrary data
+ * @param {Number}        [status=500]                    The description for status code
+ * @param {String}        [type='HTTPError']              HTTP status code
+ * @param {String|Error}  [message='Generic HTTP error']  Description of error
+ * @param {*}             [data=undefined]                Arbitrary data
  * @constructor
  */
 export default class HTTPError extends ExtendableError {
@@ -18,6 +18,9 @@ export default class HTTPError extends ExtendableError {
               type = 'HTTPError',
               message = 'Generic HTTP error',
               data = undefined) {
+    if (message instanceof Error) {
+      message = err.message
+    }
     super(message)
     this.status = status
     this.type = type
