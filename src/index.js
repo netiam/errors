@@ -22,7 +22,6 @@ export default class HTTPError extends ExtendableError {
       message = message.message
     }
     super(message)
-    this.message = message
     this.status = status
     this.type = type
     this.data = data
