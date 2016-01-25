@@ -39,7 +39,7 @@
     "istanbul": "0.4.2",
     "lodash": "4.0.0",
     "mkdirp": "0.5.1",
-    "rimraf": "2.5.0",
+    "rimraf": "2.5.1",
     "mocha": "2.3.4",
     "semantic-release": "4.3.5",
     "should": "8.1.1"
