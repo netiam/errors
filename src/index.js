@@ -7,8 +7,8 @@ export const Codes = codes
 
 /**
  * HTTPError
- * @param {Number}        [status=500]                    The description for status code
- * @param {String}        [type='HTTPError']              HTTP status code
+ * @param {Number}        [status=500]                    HTTP status code
+ * @param {String}        [type='HTTPError']              The error type
  * @param {String|Error}  [message='Generic HTTP error']  Description of error
  * @param {*}             [data=undefined]                Arbitrary data
  * @constructor
@@ -181,5 +181,12 @@ export class GatewayTimeout extends HTTPError {
 export class HttpVersionNotSupported extends HTTPError {
   constructor(type, message) {
     super(505, type, message)
+  }
+}
+
+// OAuth
+export class OAuthError extends HTTPError {
+  constructor(status, error, description, uri) {
+    super(status, error, description, uri)
   }
 }
