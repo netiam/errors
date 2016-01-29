@@ -35,7 +35,7 @@ export function getType(code) {
     return codeTable[code]
   }
 
-  throw new Error(`Cannot get type for code: ${code}`)
+  return String(code)
 }
 
 export const E1000 = code({
