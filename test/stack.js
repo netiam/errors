@@ -1,12 +1,12 @@
 import should from 'should'
-import * as errors from '../src'
+import {HTTPError} from '../src'
 
 describe('errors', () => {
   describe('stack', () => {
 
     it('should create a stacktrace', () => {
       function a() {
-        throw errors.badRequest('custom message')
+        throw new HTTPError({message: 'custom message'})
       }
 
       function b() {

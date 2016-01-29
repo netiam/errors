@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import ExtendableError from 'es6-error'
 import http from 'http'
 import os from 'os'
@@ -7,186 +8,304 @@ export const Codes = codes
 
 /**
  * HTTPError
- * @param {Number}        [status=500]                    HTTP status code
- * @param {String}        [type='HTTPError']              The error type
- * @param {String|Error}  [message='Generic HTTP error']  Description of error
- * @param {*}             [data=undefined]                Arbitrary data
+ * @param {String}        [message='']        Error description
+ * @param {Number}        [status=500]        HTTP status code
+ * @param {String}        [code=codes.E1000]  The error type
+ * @param {*}             [data=undefined]    Arbitrary data
  * @constructor
  */
-export default class HTTPError extends ExtendableError {
-  constructor(status = 500,
-              type = 'HTTPError',
-              message = 'Generic HTTP error',
-              data = undefined) {
-    if (message instanceof Error) {
-      message = message.message
-    }
+export class HTTPError extends ExtendableError {
+  constructor({message = '', status = 500, code = codes.E1000.type, data} = {}) {
     super(message)
     this.status = status
-    this.type = type
+    this.code = code
     this.data = data
   }
 
-  toString() {
-    let str = this.status + ' ' + http.STATUS_CODES[this.status] + os.EOL
-      + '  Type: ' + this.type + os.EOL
-      + os.EOL
-      + this.message
-
-    if (this.data) {
-      str += os.EOL
-        + os.EOL
-        + '  Data:' + os.EOL
-        + '  ' + JSON.stringify(this.data)
-    }
-
-    return str
+  toJSON() {
+    return Object.freeze(
+      Object.assign(
+        {name: this.name},
+        _.fromPairs(
+          _.filter(
+            _.map(
+              _.pick(this, Object.getOwnPropertyNames(this)),
+              (value, key) => {
+                value = value && _.isFunction(value.toString) ? value.toString() : value
+                return [key, value]
+              }),
+            node => !_.isNil(node[1])
+          )
+        )
+      ))
   }
 }
 
 // 4xx
 export class BadRequest extends HTTPError {
-  constructor(type, message) {
-    super(400, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {} = {}) {
+    super({
+      status: 400,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class Unauthorized extends HTTPError {
-  constructor(type, message) {
-    super(401, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 401,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class Forbidden extends HTTPError {
-  constructor(type, message) {
-    super(403, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 403,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class NotFound extends HTTPError {
-  constructor(type, message) {
-    super(404, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 404,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class MethodNotAllowed extends HTTPError {
-  constructor(type, message) {
-    super(405, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 405,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class NotAcceptable extends HTTPError {
-  constructor(type, message) {
-    super(406, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 406,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class ProxyAuthenticationRequired extends HTTPError {
-  constructor(type, message) {
-    super(407, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 407,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class RequestTimeout extends HTTPError {
-  constructor(type, message) {
-    super(408, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 408,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class Conflict extends HTTPError {
-  constructor(type, message) {
-    super(409, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 409,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class Gone extends HTTPError {
-  constructor(type, message) {
-    super(410, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 410,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class LengthRequired extends HTTPError {
-  constructor(type, message) {
-    super(411, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 411,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class PreconditionFailed extends HTTPError {
-  constructor(type, message) {
-    super(412, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 412,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class RequestEntityTooLarge extends HTTPError {
-  constructor(type, message) {
-    super(413, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 413,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class RequestURITooLong extends HTTPError {
-  constructor(type, message) {
-    super(414, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 414,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class UnsupportedMediaType extends HTTPError {
-  constructor(type, message) {
-    super(415, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 415,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class RequestedRangeNotSatisfiable extends HTTPError {
-  constructor(type, message) {
-    super(416, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 416,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class ExpectationFailed extends HTTPError {
-  constructor(type, message) {
-    super(417, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 417,
+      message,
+      code,
+      data
+    })
   }
 }
 
 // 5xx
 export class InternalServerError extends HTTPError {
-  constructor(type, message) {
-    super(500, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 500,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class NotImplemented extends HTTPError {
-  constructor(type, message) {
-    super(501, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 501,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class BadGateway extends HTTPError {
-  constructor(type, message) {
-    super(502, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 502,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class ServiceUnavailable extends HTTPError {
-  constructor(type, message) {
-    super(503, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 503,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class GatewayTimeout extends HTTPError {
-  constructor(type, message) {
-    super(504, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 504,
+      message,
+      code,
+      data
+    })
   }
 }
 
 export class HttpVersionNotSupported extends HTTPError {
-  constructor(type, message) {
-    super(505, type, message)
+  constructor({message = '', code = codes.E1000.type, data = undefined} = {}) {
+    super({
+      status: 505,
+      message,
+      code,
+      data
+    })
   }
 }
 
 // OAuth
 export class OAuthError extends HTTPError {
-  constructor(status, error, description, uri) {
-    super(status, error, description, uri)
+  constructor({status, code, description, uri, state, data}) {
+    super({
+      status,
+      code,
+      message: description,
+      data
+    })
+    this.uri = uri
+    this.state = state
   }
 }

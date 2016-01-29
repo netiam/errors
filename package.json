@@ -45,6 +45,7 @@
     "should": "8.2.1"
   },
   "dependencies": {
-    "es6-error": "2.0.2"
+    "es6-error": "2.0.2",
+    "lodash": "^4.0.1"
   }
 }

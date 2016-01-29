@@ -14,7 +14,7 @@ var sizes = _.map(header, function(title) {
 
 _.forEach(errors.Codes, function(error) {
   sizes[0] = sizes[0] < String(error.code).length ? String(error.code).length : sizes[0]
-  sizes[1] = sizes[1] < String(error.message).length ? String(error.message).length : sizes[1]
+  sizes[1] = sizes[1] < String(error.type).length ? String(error.type).length : sizes[1]
 })
 
 sizes[0]++
@@ -33,7 +33,7 @@ _.forEach(errors.Codes, function(error) {
     table += '|-' + Array(sizes[0]).join(' ') + ' |-' + Array(sizes[1]).join(' ') + ' |' + "\n"
   }
 
-  table += '| ' + '<code>' + error.code + '</code>' + Array(sizes[0] - String(error.code).length - 13).join(' ') + ' | ' + error.message + Array(sizes[1] - String(error.message).length).join(' ') + ' |' + "\n"
+  table += '| ' + '<code>' + error.code + '</code>' + Array(sizes[0] - String(error.code).length - 13).join(' ') + ' | ' + error.type + Array(sizes[1] - String(error.message).length).join(' ') + ' |' + "\n"
 })
 
 rimraf('docs', function(err) {
