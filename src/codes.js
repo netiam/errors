@@ -111,3 +111,27 @@ export const E4006 = code({
   type: 'OAUTH_INVALID_SCOPE_ERROR',
   error: 'invalid_scope'
 })
+
+export const E4007 = code({
+  code: 4007,
+  type: 'OAUTH_UNSUPPORTED_RESPONSE_TYPE_ERROR',
+  error: 'unsupported_response_type'
+})
+
+export const E4008 = code({
+  code: 4008,
+  type: 'OAUTH_ACCESS_DENIED_ERROR',
+  error: 'access_denied'
+})
+
+export const E4009 = code({
+  code: 4009,
+  type: 'OAUTH_SERVER_ERROR',
+  error: 'server_error'
+})
+
+export const E4010 = code({
+  code: 4010,
+  type: 'OAUTH_TEMPORARY_UNAVAILABLE_ERROR',
+  error: 'temporarily_unavailable'
+})
