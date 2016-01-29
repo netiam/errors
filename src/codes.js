@@ -87,3 +87,9 @@ export const E4005 = code({
   type: 'OAUTH_UNSUPPORTED_GRANT_TYPE_ERROR',
   error: 'unsupported_grant_type'
 })
+
+export const E4006 = code({
+  code: 4006,
+  type: 'OAUTH_INVALID_SCOPE_ERROR',
+  error: 'invalid_scope'
+})
