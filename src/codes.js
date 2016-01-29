@@ -60,25 +60,30 @@ export const E4000 = code({
 
 export const E4001 = code({
   code: 4001,
-  type: 'OAUTH_INVALID_REQUEST_ERROR'
+  type: 'OAUTH_INVALID_REQUEST_ERROR',
+  error: 'invalid_request'
 })
 
 export const E4002 = code({
   code: 4002,
-  type: 'OAUTH_INVALID_CLIENT_ERROR'
+  type: 'OAUTH_INVALID_CLIENT_ERROR',
+  error: 'invalid_client'
 })
 
 export const E4003 = code({
   code: 4003,
-  type: 'OAUTH_INVALID_GRANT_ERROR'
+  type: 'OAUTH_INVALID_GRANT_ERROR',
+  error: 'invalid_grant'
 })
 
 export const E4004 = code({
   code: 4004,
-  type: 'OAUTH_UNAUTHORIZED_CLIENT_ERROR'
+  type: 'OAUTH_UNAUTHORIZED_CLIENT_ERROR',
+  error: 'unauthorized_client'
 })
 
 export const E4005 = code({
   code: 4005,
-  type: 'OAUTH_UNSUPPORTED_GRANT_TYPE_ERROR'
+  type: 'OAUTH_UNSUPPORTED_GRANT_TYPE_ERROR',
+  error: 'unsupported_grant_type'
 })
