@@ -2,9 +2,10 @@ import _ from 'lodash'
 
 const types = []
 const codes = []
-const codeTable = {}
+const typeTable = {}
+const errorTable = {}
 
-export function code({code, type}) {
+export function code({code, type, error}) {
   if (_.includes(codes, code)) {
     throw new Error(`Code already exists: ${code}`)
   }
@@ -15,11 +16,16 @@ export function code({code, type}) {
   codes.push(code)
   types.push(type)
 
-  codeTable[code] = type
+  typeTable[code] = type
+
+  if (error) {
+    errorTable[code] = error
+  }
 
   return Object.freeze({
     code,
     type,
+    error,
     toString() {
       return type
     }
@@ -31,8 +37,8 @@ export function getType(code) {
     return code.type
   }
 
-  if (_.isNumber(code) && _.isString(codeTable[code])) {
-    return codeTable[code]
+  if (_.isNumber(code) && _.isString(typeTable[code])) {
+    return typeTable[code]
   }
 
   return String(code)
@@ -41,6 +47,10 @@ export function getType(code) {
 export function getError(code) {
   if (_.isObject(code) && code.error) {
     return code.error
+  }
+
+  if (_.isNumber(code) && _.isString(errorTable[code])) {
+    return errorTable[code]
   }
 
   return String(code)
