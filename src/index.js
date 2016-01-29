@@ -301,11 +301,13 @@ export class OAuthError extends HTTPError {
   constructor({status, code, description, uri, state, data}) {
     super({
       status,
-      code,
       message: description,
+      code,
       data
     })
-    this.uri = uri
+    this.error = Codes.getType(code)
+    this.error_description = description
+    this.error_uri = uri
     this.state = state
   }
 }
