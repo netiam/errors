@@ -38,6 +38,14 @@ export function getType(code) {
   return String(code)
 }
 
+export function getError(code) {
+  if (_.isObject(code) && code.error) {
+    return code.error
+  }
+
+  return String(code)
+}
+
 export const E1000 = code({
   code: 1000,
   type: 'ERROR'
