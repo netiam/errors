@@ -305,7 +305,7 @@ export class OAuthError extends HTTPError {
       code,
       data
     })
-    this.error = code.error
+    this.error = Code.getError(code)
     this.error_description = description
     this.error_uri = uri
     this.state = state
