@@ -2,6 +2,7 @@ import _ from 'lodash'
 
 const types = []
 const codes = []
+const codeTable = {}
 
 export function code({code, type}) {
   if (_.includes(codes, code)) {
@@ -14,6 +15,8 @@ export function code({code, type}) {
   codes.push(code)
   types.push(type)
 
+  codeTable[code] = type
+
   return Object.freeze({
     code,
     type,
@@ -21,6 +24,18 @@ export function code({code, type}) {
       return type
     }
   })
+}
+
+export function getType(code) {
+  if (_.isObject(code) && code.type) {
+    return code.type
+  }
+
+  if (_.isNumber(code) && _.isString(codeTable[code])) {
+    return codeTable[code]
+  }
+
+  throw new Error(`Cannot get type for code: ${code}`)
 }
 
 export const E1000 = code({
