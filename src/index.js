@@ -20,11 +20,15 @@ export class HTTPError extends ExtendableError {
   }
 
   toJSON() {
-    return Object.freeze({
+    const err = {
       message: this.message,
       status: this.status,
       code: this.code,
       id: this.id
-    })
+    }
+    if (process.env.NODE_ENV === 'development') {
+      err.stack = this.stack
+    }
+    return Object.freeze(err)
   }
 }
