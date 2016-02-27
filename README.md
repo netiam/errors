@@ -5,9 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/netiam/errors/badges/gpa.svg)](https://codeclimate.com/github/netiam/errors)
 [![Test Coverage](https://codeclimate.com/github/netiam/errors/badges/coverage.svg)](https://codeclimate.com/github/netiam/errors/coverage)
 
-> A collection of HTTP errors
-
-The library contains client and server errors.
+> Normalized HTTP errors
 
 ## References
 
