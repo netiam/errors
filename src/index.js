@@ -2,7 +2,9 @@ import _ from 'lodash'
 import ExtendableError from 'es6-error'
 import http from 'http'
 import os from 'os'
-import types from './types'
+import types, {register, ErrorType} from './types'
+
+export {types, register, ErrorType}
 
 /**
  * HTTPError

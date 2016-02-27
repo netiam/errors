@@ -1,7 +1,8 @@
-import types, {
-  ErrorType,
-  register
-} from '../src/types'
+import {
+  types,
+  register,
+  ErrorType
+} from '../src'
 
 describe('netiam - errors', () => {
   describe('types', () => {
