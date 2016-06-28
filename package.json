@@ -30,22 +30,21 @@
   },
   "homepage": "https://github.com/netiam/errors#readme",
   "devDependencies": {
-    "babel-cli": "^6.6.4",
-    "babel-eslint": "^6.0.4",
+    "babel-cli": "^6.9.0",
     "babel-preset-es2015-node5": "^1.1.0",
+    "eslint": "^2.11.1",
     "codeclimate-test-reporter": "0.3.3",
-    "eslint": "^2.4.0",
-    "istanbul": "0.4.3",
+    "istanbul": "0.4.4",
     "lodash": "4.0.1",
     "mkdirp": "0.5.1",
-    "mocha": "2.4.5",
+    "mocha": "2.5.3",
     "rimraf": "2.5.1",
     "semantic-release": "4.3.5",
-    "should": "8.2.2"
+    "should": "9.0.2"
   },
   "dependencies": {
-    "es6-error": "2.1.0",
-    "lodash": "^4.0.1"
+    "es6-error": "3.0.0",
+    "lodash": "^4.13.0"
   },
   "publicConfig": {
     "tag": "next"
