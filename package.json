@@ -43,7 +43,7 @@
     "should": "11.1.0"
   },
   "dependencies": {
-    "es6-error": "3.0.1",
+    "es6-error": "3.1.0",
     "lodash": "^4.15.0"
   },
   "publicConfig": {
