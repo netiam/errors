@@ -33,7 +33,7 @@
     "babel-preset-es2015-node5": "^1.2.0",
     "babel-cli": "^6.9.0",
     "eslint": "^3.0.0",
-    "codeclimate-test-reporter": "0.3.3",
+    "codeclimate-test-reporter": "0.4.0",
     "istanbul": "0.4.4",
     "lodash": "4.16.3",
     "mkdirp": "0.5.1",
