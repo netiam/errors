@@ -32,15 +32,15 @@
   "devDependencies": {
     "babel-preset-es2015-node5": "^1.2.0",
     "babel-cli": "^6.18.0",
-    "eslint": "^3.0.0",
+    "eslint": "^4.7.1",
     "codeclimate-test-reporter": "0.4.1",
     "istanbul": "0.4.5",
     "lodash": "4.17.4",
     "mkdirp": "0.5.1",
-    "mocha": "3.4.2",
+    "mocha": "3.5.3",
     "rimraf": "2.6.2",
     "semantic-release": "6.3.6",
-    "should": "11.1.2"
+    "should": "13.0.1"
   },
   "dependencies": {
     "es6-error": "4.0.2",
