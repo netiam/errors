@@ -39,7 +39,7 @@
     "mkdirp": "0.5.1",
     "mocha": "3.4.2",
     "rimraf": "2.6.1",
-    "semantic-release": "6.3.6",
+    "semantic-release": "7.0.1",
     "should": "11.1.2"
   },
   "dependencies": {
