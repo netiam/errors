@@ -40,7 +40,7 @@
     "mocha": "3.4.2",
     "rimraf": "2.6.1",
     "semantic-release": "6.3.6",
-    "should": "11.1.2"
+    "should": "13.0.1"
   },
   "dependencies": {
     "es6-error": "4.0.2",
