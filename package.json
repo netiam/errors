@@ -31,16 +31,16 @@
   "homepage": "https://github.com/netiam/errors#readme",
   "devDependencies": {
     "babel-preset-es2015-node5": "^1.2.0",
-    "babel-cli": "^6.18.0",
+    "babel-cli": "^6.26.0",
     "eslint": "^4.7.1",
     "codeclimate-test-reporter": "0.4.1",
     "istanbul": "0.4.5",
     "lodash": "4.17.4",
     "mkdirp": "0.5.1",
     "semantic-release": "8.0.3",
-    "mocha": "3.5.3",
+    "mocha": "4.0.1",
     "rimraf": "2.6.2",
-    "should": "13.0.1"
+    "should": "13.1.0"
   },
   "dependencies": {
     "es6-error": "4.0.2",
