@@ -38,7 +38,7 @@
     "lodash": "4.17.4",
     "mkdirp": "0.5.1",
     "semantic-release": "8.2.0",
-    "mocha": "4.0.1",
+    "mocha": "4.1.0",
     "rimraf": "2.6.2",
     "should": "13.1.3"
   },
