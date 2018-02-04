@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "es6-error": "4.1.1",
-    "lodash": "^4.16.0"
+    "lodash": "^4.17.5"
   },
   "publicConfig": {
     "tag": "next"
